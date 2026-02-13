@@ -12,16 +12,19 @@ body{
   -webkit-overflow-scrolling: touch;
 }
 
-/* START */
+/* START SCREEN */
 #start-screen{
   position: fixed;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background:
+    radial-gradient(900px 600px at 50% 30%, rgba(255,77,109,.14), rgba(0,0,0,0) 55%),
+    linear-gradient(to bottom, #0b0b0b, #000 55%, #0f0f0f);
   z-index: 999;
 }
+
 #start-btn{
   padding: 18px 36px;
   font-size: 18px;
@@ -31,25 +34,31 @@ body{
   background: linear-gradient(135deg, #ff4d6d, #ff758f);
   color: #fff;
   box-shadow: 0 18px 50px rgba(0,0,0,0.65);
+  transition: transform .15s ease, filter .15s ease;
 }
+#start-btn:active { transform: scale(0.97); }
+#start-btn:hover  { filter: brightness(1.05); }
 
-/* CARD */
+/* CARD PRINCIPAL */
 .frame{
   width: min(92vw, 420px);
-  margin: 32px auto;                  /* ✅ centraliza e permite rolar */
+  margin: 32px auto;
   border-radius: 28px;
   overflow: hidden;
   background: rgba(0,0,0,0.55);
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 28px 80px rgba(0,0,0,0.85);
+  position: relative;
+  z-index: 2; /* ✅ fica por cima dos corações */
 }
 
-/* CARROSSEL COM ALTURA ESTÁVEL */
+/* CARROSSEL (altura estável, não bug) */
 .swiper{
   width: 100%;
   height: clamp(320px, 55vh, 520px);
   background: #111;
 }
+
 .swiper-slide img{
   width: 100%;
   height: 100%;
@@ -57,32 +66,27 @@ body{
   display: block;
 }
 
-/* ✅ AQUI É O SEGREDO: parte de baixo com min-height,
-   e o player “grudado” embaixo com margin-top:auto */
+/* PARTE DE BAIXO */
 .content-bottom{
-  background: linear-gradient(to top, rgba(0,0,0,0.98), rgba(0,0,0,0.75));
   padding: 18px;
-
   display: flex;
   flex-direction: column;
   gap: 14px;
-
-  min-height: 260px;                  /* ✅ garante espaço p/ texto + player */
+  background: linear-gradient(to top, rgba(0,0,0,0.98), rgba(0,0,0,0.75));
+  min-height: 260px;
 }
 
 /* CONTADOR */
 .counter-emotional{
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(255,255,255,0.9);
   font-weight: 500;
   letter-spacing: 0.3px;
 }
 
-/* TEXTO */
-.typewrap{
-  position: relative;
-}
+/* TEXTO DIGITANDO */
+.typewrap{ position: relative; }
 .typewriter{
   font-size: 15px;
   line-height: 1.7;
@@ -107,12 +111,13 @@ body{
   25%, 75% { opacity: 0; }
 }
 
-/* ✅ PLAYER SEMPRE NO “FIM” DO BLOCO */
+/* PLAYER (BLOCO SEPARADO E “NO FUNDO”) */
 .music-player{
-  margin-top: auto;                   /* ✅ empurra pro fundo */
+  margin-top: auto;                 /* ✅ empurra o player pra baixo do bloco */
   padding-top: 14px;
   border-top: 1px solid rgba(255,255,255,0.10);
 }
+
 .music-player iframe{
   width: 100%;
   height: 80px;
@@ -121,4 +126,25 @@ body{
   display: block;
   background: #121212;
   box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+}
+
+/* CORAÇÕES FLUTUANDO */
+.heart{
+  position: fixed;
+  bottom: -20px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 1; /* ✅ abaixo do card, acima do fundo */
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+}
+
+@keyframes floatUp{
+  from{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to{
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
 }
