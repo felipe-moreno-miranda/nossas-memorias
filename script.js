@@ -49,7 +49,7 @@ function typeWriter(text) {
       clearInterval(timer);
       setTimeout(() => caret.style.opacity = "0", 800);
     }
-  }, 28);
+  }, 45);
 }
 
 /* CORAÇÕES */
@@ -87,4 +87,5 @@ startBtn.addEventListener("click", () => {
   // inicia corações
   setInterval(criarCoracao, 900);
 });
+
 
