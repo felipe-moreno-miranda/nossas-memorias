@@ -1,7 +1,7 @@
 // =======================
 // CONFIG
 // =======================
-const DATA_INICIO = new Date("2022-06-15");
+const DATA_INICIO = new Date("2026-01-04");
 
 // ✅ COLE AQUI O LINK EMBED DO SPOTIFY
 // Exemplo de embed (track):
@@ -59,3 +59,4 @@ startBtn.addEventListener("click", () => {
   // Spotify
   spPlayer.src = SPOTIFY_EMBED_URL;
 });
+
