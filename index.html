@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nossas Memórias ❤️</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+</head>
+
+<body>
+  <!-- START -->
+  <div id="start-screen">
+    <button id="start-btn">Aperte aqui ❤️</button>
+  </div>
+
+  <!-- FRAME -->
+  <div class="frame">
+    <div class="counter" id="counter"></div>
+
+    <!-- SWIPER -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/1.jpg" alt="Foto 1"
+               onerror="this.src='https://via.placeholder.com/900x1600/111/fff?text=Foto+1'">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/2.jpg" alt="Foto 2"
+               onerror="this.src='https://via.placeholder.com/900x1600/111/fff?text=Foto+2'">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/3.jpg" alt="Foto 3"
+               onerror="this.src='https://via.placeholder.com/900x1600/111/fff?text=Foto+3'">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/4.jpg" alt="Foto 4"
+               onerror="this.src='https://via.placeholder.com/900x1600/111/fff?text=Foto+3'">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/3.jpg" alt="Foto 5"
+               onerror="this.src='https://via.placeholder.com/900x1600/111/fff?text=Foto+3'">
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="content-bottom">
+      <div class="bottom-text" id="bottom-text">
+        Entre tantos caminhos, foi você.<br>
+        Não porque foi fácil, mas porque foi verdadeiro.<br>
+        Cada dia, cada fase, cada detalhe…<br>
+        ainda escolheria você, sempre.
+      </div>
+
+      <div class="music-player">
+        <iframe
+          id="sp-player"
+          title="Música"
+          src="https://open.spotify.com/embed/track/6EDj1nbl9wo6ivGI1t59G4
+          "
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
