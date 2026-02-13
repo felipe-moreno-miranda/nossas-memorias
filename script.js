@@ -1,7 +1,7 @@
 // =======================
 // CONFIG
 // =======================
-const DATA_INICIO = new Date("2022-06-15");
+const DATA_INICIO = new Date("2026-01-04");
 
 // Spotify embed que funcionou
 const SPOTIFY_EMBED_URL = "https://open.spotify.com/embed/track/6EDj1nbl9wo6ivGI1t59G4";
@@ -9,7 +9,6 @@ const SPOTIFY_EMBED_URL = "https://open.spotify.com/embed/track/6EDj1nbl9wo6ivGI
 const TEXTO =
 `Entre o mundo correndo e o tempo apertado…
 às vezes eu me perdi no trabalho.
-
 Mas nunca me perdi de você.
 
 Porque mesmo nos dias mais cansados,
@@ -88,3 +87,4 @@ startBtn.addEventListener("click", () => {
   // inicia corações
   setInterval(criarCoracao, 900);
 });
+
